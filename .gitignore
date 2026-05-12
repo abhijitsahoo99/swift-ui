@@ -22,3 +22,7 @@ Package.resolved
 # Misc
 *.swp
 *~
+
+# Local assistant/tool settings
+.claude/
+**/.claude/
