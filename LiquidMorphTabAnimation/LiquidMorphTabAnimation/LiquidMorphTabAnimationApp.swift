@@ -11,7 +11,7 @@ import SwiftUI
 struct LiquidMorphTabAnimationApp: App {
     var body: some Scene {
         WindowGroup {
-            NavBarDemo()
+            NavBarLab()
         }
     }
 }

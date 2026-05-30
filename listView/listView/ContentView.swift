@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import CoreTransferable
+
+//Pet is my data model
 struct Pet: Identifiable{
-    
+    //enum Kind means fixed options
     enum Kind {
         case cat
         case dog
@@ -18,7 +21,7 @@ struct Pet: Identifiable{
         case rabbit
         case bug
         
-        var SystemImage: String {
+        var systemImage: String {
             switch self {
             case .cat: return "cat.fill"
             case .dog: return "dog.fill"
@@ -49,12 +52,12 @@ struct Pet: Identifiable{
     
 }
 
-struct petRowView: View{
+struct PetRowView: View{
     var pet: Pet
     
     var body: some View {
         HStack {
-            Label(pet.name , systemImage: pet.kind.SystemImage)
+            Label(pet.name , systemImage: pet.kind.systemImage)
             Spacer()
             Text(pet.trick)
                 .foregroundStyle(.secondary)
@@ -109,7 +112,7 @@ struct ContentView: View {
         }
         
         List(pets) { pet in
-            petRowView(pet: pet)
+            PetRowView(pet: pet)
         }
         
     }
